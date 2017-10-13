@@ -2,6 +2,6 @@
 
 ## Installation
 
-```python
+```bash
 $ pip install . --user --upgrade
 ```
