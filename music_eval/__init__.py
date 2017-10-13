@@ -1,2 +1,4 @@
-from .evaluate import *
+__all__ = ['evaluate', 'get_score']
+
+from music_eval.evaluate import *
 

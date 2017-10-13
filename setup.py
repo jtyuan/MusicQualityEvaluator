@@ -7,5 +7,5 @@ setup(name='Music Quality Evaluator',
       description='Music Quality Evaluator is tool to evaluate the quality of computer generated music pieces.',
       author='Tianyuan Jiang',
       author_email='tianyuaj@andrew.cmu.edu',
-      packages=['music_eval']
+      packages=['music_eval', 'music_eval.evaluators']
      )
