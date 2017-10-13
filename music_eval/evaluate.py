@@ -6,13 +6,13 @@ import os
 
 import pandas as pd
 
-from .evaluators import *
+from music_eval.evaluators import *
 
 f = [pitch_class_set, pitch_diversity, rhythmic_diversity, measure_density]
 w = [0.2, 0.2, 0.2, 0.2]
 
 
-def get_score(s):
+def get_score(s, ret_dict=False):
     # total = 0
     results = {}
     for i, t in enumerate(f):
@@ -20,7 +20,10 @@ def get_score(s):
         results[t.__name__] = p
         # total += w[i] * p
     # results['overall'] = total
-    return results
+    if ret_dict:
+        return results
+    else:
+        return pd.DataFrame([results])
 
 
 def evaluate(o, output='output.csv'):
@@ -32,7 +35,7 @@ def evaluate(o, output='output.csv'):
         writer.writeheader()
         for i in range(0, len(o)):
             s = o.getScoreByNumber(i + 1)
-            sc = get_score(s)
+            sc = get_score(s, ret_dict=True)
             # print(sc)
             writer.writerow(sc)
             csvfile.flush()
