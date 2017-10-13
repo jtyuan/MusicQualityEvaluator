@@ -15,11 +15,16 @@ def rhythmic_diversity(score):
     except:
         expanded = score.parts[0]
 
-    for ts in expanded[0]:
-        if isinstance(ts, meter.TimeSignature):
-            break
+    try:
+        for ts in expanded[0]:
+            if isinstance(ts, meter.TimeSignature):
+                barQuarterLength = ts.numerator * ts.beatLengthToQuarterLengthRatio
+                break
+        else:
+            barQuarterLength = 4.0
+    except:
+        barQuarterLength = 4.0
 
-    barQuarterLength = ts.numerator * ts.beatLengthToQuarterLengthRatio
     merged = False
     for i, m in enumerate(expanded):
         if isinstance(m, (stream.Measure, stream.Voice)):
