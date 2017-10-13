@@ -18,8 +18,7 @@ def x_cell(score, cell_size=4):
                 break
         else:
             count += 1
-    print(count, n_n, cell_size)
-    return count / (n_n / cell_size)
+    return count / float(n_n / cell_size)
 
 
 def y_cell(score, cell_size=4):
@@ -36,7 +35,7 @@ def y_cell(score, cell_size=4):
                 break
         else:
             count += 1
-    return count / (n_n / cell_size)
+    return count / float(n_n / cell_size)
 
 
 def z_cell(score, cell_size=4):
@@ -52,4 +51,4 @@ def z_cell(score, cell_size=4):
             and abs(abs(get_pitch(notes[i + 1]).ps - get_pitch(notes[i + 2]).ps) - 4) < eps
                 and abs(abs(get_pitch(notes[i + 2]).ps - get_pitch(notes[i + 3]).ps) - 2) < eps):
             count += 1
-    return count / (n_n / cell_size)
+    return count / float(n_n / cell_size)

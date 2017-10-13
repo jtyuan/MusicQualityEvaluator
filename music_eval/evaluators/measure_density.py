@@ -37,4 +37,4 @@ def measure_density(score, max_note_num=16):
             else:
                 count += len(m.notes)
 
-    return count / (len(expanded) * max_note_num)
+    return count / float(len(expanded) * max_note_num)

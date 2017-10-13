@@ -44,4 +44,4 @@ def rhythmic_diversity(score):
                 signature = rhythmic_signature(m.notes)
                 unique_measure.add(signature)
                 #     print(unique_measure)
-    return len(unique_measure) / len(expanded)
+    return len(unique_measure) / float(len(expanded))

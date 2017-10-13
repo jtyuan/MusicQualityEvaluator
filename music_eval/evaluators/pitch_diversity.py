@@ -52,4 +52,4 @@ def pitch_diversity(score):
                 signature = pitch_signature(m.notes)
                 unique_measure.add(signature)
 
-    return len(unique_measure) / len(expanded)
+    return len(unique_measure) / float(len(expanded))

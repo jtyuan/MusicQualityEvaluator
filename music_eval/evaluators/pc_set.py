@@ -171,4 +171,4 @@ def pitch_class_set(score, cs='any', max_set_size=5):
     elif isinstance(cs, list):
         max_count = count_in_pc_set(notes, cs)
 
-    return max_count / n_n
+    return max_count / float(n_n)
